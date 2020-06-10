@@ -1,0 +1,39 @@
+#Application Name
+spring:
+  application:
+    name: zuul-server     # This is the name for the remote configuration file
+  cloud:
+    config:
+      uri: http://localhost:8888  #where the config-service is running
+      fail-fast: true             #the service will not run if it can't reach the config-service
+
+
+#server:
+#  port: 8080 #the default port used for zuul service
+#  
+#zuul:
+#  ignoredServices: '*'
+#  host:
+#    connect-timeout-millis: 20000
+#    socket-timeout-millis: 20000
+#    routes:
+#      sample-service: # Service to create as sample
+#        path: /sample/** #path that will be intercepted
+#        url: sample-service #which url the request will e mapped to
+#        stripPrefix: false  #if zuul should replace the "/sample/" segment
+#        sensitiveHeaders:
+
+#spring:
+#  application:
+#    name: zuul-server
+#
+#server:
+#  port: 8080 #the default port used for zuul service
+#
+#zuul:
+#  ignoredServices: '*'
+#  routes:
+#    echo-service:
+#      path: /echo/**
+#      url: http://localhost:8091
+#      serviceId: echo_service_id
